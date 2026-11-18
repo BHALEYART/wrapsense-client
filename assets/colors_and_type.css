@@ -1,0 +1,323 @@
+/* =========================================================
+   WrapSense Design System — Foundations
+   Colors + Typography tokens (base + semantic)
+   ========================================================= */
+
+/* JetBrains Mono is still loaded from Google Fonts (data display only). */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+/* =========================================================
+   Brand fonts — supplied by WrapSense
+   - Bebas Neue   →  Wordmark / display caps (matches the logo)
+   - Poppins      →  Display + UI sans (full weight range)
+   - Gilroy       →  Body / editorial light
+   ========================================================= */
+
+/* ---------- Bebas Neue ---------- */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("fonts/BebasNeue-Book.otf") format("opentype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("fonts/BebasNeue-Regular.otf") format("opentype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("fonts/BebasNeue-Bold.otf") format("opentype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* ---------- Poppins ---------- */
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-ExtraLight.ttf") format("truetype");
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+
+/* ---------- Gilroy ---------- */
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-UltraLight.ttf") format("truetype");
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Light.ttf") format("truetype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ---------- Brand palette (sampled from the logo gradient) ---------- */
+  --ws-navy-900: #0E1E3C;   /* deepest blue in logo W */
+  --ws-navy-800: #15295A;
+  --ws-navy-700: #1C3A7C;
+  --ws-blue-600: #1E5BB8;
+  --ws-blue-500: #2E7AD6;
+  --ws-blue-400: #3A99E0;   /* rightmost letter in logo */
+  --ws-cyan-300: #5FB6E6;
+
+  /* Signature brand gradient (mirrors the wordmark) */
+  --ws-gradient: linear-gradient(90deg, #0E1E3C 0%, #15295A 22%, #1C3A7C 45%, #2E7AD6 72%, #3A99E0 100%);
+  --ws-gradient-vertical: linear-gradient(180deg, #0E1E3C 0%, #1C3A7C 55%, #3A99E0 100%);
+
+  /* Category gradients (from product sell sheets) — used as section/header panels */
+  --ws-teal-500:  #1CA896;   /* flow-wrappers + weighing headers lean teal */
+  --ws-teal-400:  #3DC1A8;
+  --ws-gradient-flow:    linear-gradient(100deg, #2DB89F 0%, #1C79AE 55%, #1C3A7C 100%);
+  --ws-gradient-vffs:    linear-gradient(100deg, #1C3A7C 0%, #2E7AD6 100%);
+  --ws-gradient-weigh:   linear-gradient(100deg, #3DC1A8 0%, #1CA896 60%, #0F7F88 100%);
+  --ws-gradient-case:    linear-gradient(100deg, #15295A 0%, #1C79AE 55%, #2DB89F 100%);
+  --ws-gradient-erector: linear-gradient(100deg, #F5C518 0%, #7CC04B 55%, #2DB89F 100%);
+  --ws-gradient-carton:  linear-gradient(100deg, #1C2A8E 0%, #9A1D6B 55%, #E02626 100%);
+  --ws-gradient-stick:   linear-gradient(100deg, #F59100 0%, #E02626 100%);
+  --ws-gradient-pouch:   linear-gradient(100deg, #2B2280 0%, #6A2292 55%, #C81F7A 100%);
+  --ws-gradient-label:   linear-gradient(100deg, #1C3A7C 0%, #2E7AD6 55%, #3DC1A8 100%);
+  --ws-gradient-cap:     linear-gradient(100deg, #1C3A7C 0%, #5A2C99 55%, #9A4EC4 100%);
+
+  /* ---------- Industrial neutrals ---------- */
+  --ws-ink-900: #0B0F17;    /* near-black, for heavy industrial type */
+  --ws-ink-700: #2A3140;
+  --ws-ink-500: #5A6474;
+  --ws-ink-300: #9BA3B2;
+  --ws-steel-200: #D4D8DF;  /* hairline borders, dividers */
+  --ws-steel-100: #E8EBF0;
+  --ws-steel-50:  #F3F5F8;  /* page background tint */
+  --ws-paper:     #FFFFFF;
+
+  /* ---------- Semantic status (industrial signaling) ---------- */
+  --ws-run-500:    #1F9254;   /* running / ok — safety green */
+  --ws-run-100:    #E3F3EA;
+  --ws-warn-500:   #E3A008;   /* caution — amber */
+  --ws-warn-100:   #FCEFC7;
+  --ws-fault-500:  #C81E1E;   /* fault / e-stop — red */
+  --ws-fault-100:  #F8D7D7;
+  --ws-info-500:   var(--ws-blue-500);
+  --ws-info-100:   #E1EEFA;
+
+  /* ---------- Semantic surfaces & text ---------- */
+  --ws-bg:         var(--ws-steel-50);
+  --ws-bg-elev:    var(--ws-paper);
+  --ws-bg-inverse: var(--ws-navy-900);
+  --ws-fg-1:       var(--ws-ink-900);   /* primary text */
+  --ws-fg-2:       var(--ws-ink-700);   /* body / secondary */
+  --ws-fg-3:       var(--ws-ink-500);   /* muted / meta */
+  --ws-fg-inverse: var(--ws-paper);
+  --ws-accent:     var(--ws-blue-500);
+  --ws-border:     var(--ws-steel-200);
+  --ws-border-strong: var(--ws-ink-700);
+
+  /* ---------- Typography — base ---------- */
+  /* Brand fonts (supplied by WrapSense):
+     - Bebas Neue → wordmark / industrial display caps (matches the WRAPSENSE logo)
+     - Poppins    → display + UI sans (200–800)
+     - Gilroy     → editorial body light (200–300) */
+  --ws-font-wordmark: "Bebas Neue", "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --ws-font-display: "Poppins", "Bebas Neue", "Barlow Condensed", system-ui, sans-serif;
+  --ws-font-sans:    "Poppins", "Gilroy", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ws-font-body:    "Gilroy", "Poppins", system-ui, -apple-system, sans-serif;
+  --ws-font-mono:    "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+  --ws-size-xs:   12px;
+  --ws-size-sm:   14px;
+  --ws-size-base: 16px;
+  --ws-size-md:   18px;
+  --ws-size-lg:   22px;
+  --ws-size-xl:   28px;
+  --ws-size-2xl:  36px;
+  --ws-size-3xl:  48px;
+  --ws-size-4xl:  64px;
+  --ws-size-5xl:  88px;
+
+  --ws-leading-tight:  1.1;
+  --ws-leading-snug:   1.25;
+  --ws-leading-normal: 1.5;
+  --ws-leading-loose:  1.7;
+
+  --ws-tracking-tight:  -0.01em;
+  --ws-tracking-normal: 0;
+  --ws-tracking-wide:   0.04em;
+  --ws-tracking-caps:   0.12em;   /* our signature uppercase tracking */
+
+  /* ---------- Spacing (4-pt scale) ---------- */
+  --ws-space-1:  4px;
+  --ws-space-2:  8px;
+  --ws-space-3:  12px;
+  --ws-space-4:  16px;
+  --ws-space-5:  24px;
+  --ws-space-6:  32px;
+  --ws-space-7:  48px;
+  --ws-space-8:  64px;
+  --ws-space-9:  96px;
+
+  /* ---------- Radius (intentionally tight — industrial) ---------- */
+  --ws-radius-none: 0;
+  --ws-radius-sm:   2px;
+  --ws-radius-md:   4px;
+  --ws-radius-lg:   6px;
+  --ws-radius-pill: 999px;
+
+  /* ---------- Elevation (subtle — things are bolted down, not floating) ---------- */
+  --ws-shadow-0: none;
+  --ws-shadow-1: 0 1px 0 rgba(14, 30, 60, 0.06), 0 1px 2px rgba(14, 30, 60, 0.04);
+  --ws-shadow-2: 0 2px 4px rgba(14, 30, 60, 0.08), 0 1px 0 rgba(14, 30, 60, 0.04);
+  --ws-shadow-3: 0 8px 24px rgba(14, 30, 60, 0.10), 0 2px 4px rgba(14, 30, 60, 0.06);
+  --ws-ring-focus: 0 0 0 3px rgba(46, 122, 214, 0.35);
+
+  /* ---------- Motion ---------- */
+  --ws-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ws-ease-emph:     cubic-bezier(0.3, 0, 0, 1);
+  --ws-dur-fast:   120ms;
+  --ws-dur-normal: 200ms;
+  --ws-dur-slow:   320ms;
+}
+
+/* =========================================================
+   Semantic type styles — reach for these first
+   ========================================================= */
+
+.ws-display {
+  font-family: var(--ws-font-display);
+  font-weight: 800;
+  font-size: var(--ws-size-5xl);
+  line-height: var(--ws-leading-tight);
+  letter-spacing: var(--ws-tracking-tight);
+  text-transform: uppercase;
+  color: var(--ws-fg-1);
+}
+
+.ws-h1 {
+  font-family: var(--ws-font-display);
+  font-weight: 700;
+  font-size: var(--ws-size-4xl);
+  line-height: var(--ws-leading-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-tracking-tight);
+  color: var(--ws-fg-1);
+}
+
+.ws-h2 {
+  font-family: var(--ws-font-display);
+  font-weight: 700;
+  font-size: var(--ws-size-3xl);
+  line-height: var(--ws-leading-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-tracking-normal);
+  color: var(--ws-fg-1);
+}
+
+.ws-h3 {
+  font-family: var(--ws-font-display);
+  font-weight: 600;
+  font-size: var(--ws-size-2xl);
+  line-height: var(--ws-leading-snug);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-tracking-wide);
+  color: var(--ws-fg-1);
+}
+
+.ws-h4 {
+  font-family: var(--ws-font-sans);
+  font-weight: 700;
+  font-size: var(--ws-size-xl);
+  line-height: var(--ws-leading-snug);
+  color: var(--ws-fg-1);
+}
+
+.ws-eyebrow {
+  font-family: var(--ws-font-sans);
+  font-weight: 600;
+  font-size: var(--ws-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-tracking-caps);
+  color: var(--ws-accent);
+}
+
+.ws-body {
+  font-family: var(--ws-font-sans);
+  font-weight: 400;
+  font-size: var(--ws-size-base);
+  line-height: var(--ws-leading-normal);
+  color: var(--ws-fg-2);
+}
+
+.ws-body-lg {
+  font-family: var(--ws-font-sans);
+  font-weight: 400;
+  font-size: var(--ws-size-md);
+  line-height: var(--ws-leading-normal);
+  color: var(--ws-fg-2);
+}
+
+.ws-body-sm {
+  font-family: var(--ws-font-sans);
+  font-weight: 400;
+  font-size: var(--ws-size-sm);
+  line-height: var(--ws-leading-normal);
+  color: var(--ws-fg-2);
+}
+
+.ws-meta {
+  font-family: var(--ws-font-sans);
+  font-weight: 500;
+  font-size: var(--ws-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-tracking-caps);
+  color: var(--ws-fg-3);
+}
+
+.ws-mono {
+  font-family: var(--ws-font-mono);
+  font-weight: 500;
+  font-size: var(--ws-size-sm);
+  color: var(--ws-fg-2);
+  letter-spacing: -0.01em;
+}
+
+/* A nice industrial spec-label combo you'll use constantly */
+.ws-spec-label {
+  font-family: var(--ws-font-sans);
+  font-weight: 600;
+  font-size: var(--ws-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ws-tracking-caps);
+  color: var(--ws-fg-3);
+}
+.ws-spec-value {
+  font-family: var(--ws-font-mono);
+  font-weight: 600;
+  font-size: var(--ws-size-lg);
+  color: var(--ws-fg-1);
+}
